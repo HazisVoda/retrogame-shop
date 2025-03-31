@@ -8,49 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <nav class="nav container">
-      <div class="nav__data">
-        <a href="#" class="nav__logo">
-          <i class="ri-planet-fill"></i> Retroshop
-        </a>
-
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="ri-menu-line nav__burger"></i>
-          <i class="ri-close-line nav__close"></i>
+  <?php include 'header.php'; ?>
+  <!-- Carousel Slider -->
+   <div class="slider">
+    <div class="wrapper">
+      <div class="item">
+        <div class="content">
+          <h3 class="subtitle">Slide 01</h3>
+          <h2 class="title">TITLE</h2>
+          <p class="description">Description</p>
+          <a href="" class="button">Learn More</a>
         </div>
-
       </div>
-
-      <div class="nav__menu" id="nav-menu">
-        <ul class ="nav__list">
-          <li class="dropdown__item">
-            <a href="#" class="nav__link">Home</a>
-          </li>
-          <li class="dropdown__item">
-            <a href="#" class="nav__link">Company</a>
-          </li>
-          <li class="dropdown__item">
-            <div class="nav__link">
-              Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-            </div>
-          </li>
-          <li class="dropdown__item">
-            <div class="nav__link">
-              Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-            </div>
-          </li>
-          <li class="dropdown__item">
-            <a href="#" class="nav__link">Products</a>
-          </li>
-          <li class="dropdown__item">
-            <a href="#" class="nav__link">Contact</a>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
-  </header>
+    </div>
+   </div>
 
   <script src="main.js"></script>
 </body>
