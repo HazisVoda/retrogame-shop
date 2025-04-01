@@ -19,34 +19,38 @@
     <div class="wrapper swiper-wrapper">
       <div class="item swiper-slide">
         <div class="content">
-          <h3 class="subtitle">Slide 01</h3>
-          <h2 class="title">TITLE</h2>
-          <p class="description">Description</p>
-          <a href="" class="button">Learn More</a>
+          <h3 class="subtitle">NEW RELEASE</h3>
+          <h2 class="title">Metal Gear Solid 3: Subsistence</h2>
+          <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci pariatur sit quaerat voluptate, autem, aperiam ea quidem iste nulla, molestias libero eaque rerum officia ipsa illo veritatis aliquam quibusdam vero.</p>
+          <a href="" class="button button-cart">Add To Cart</a>
+          <a href="" class="button button-info">Learn More</a>
         </div>
       </div>
       <div class="item swiper-slide">
         <div class="content">
-          <h3 class="subtitle">Slide 02</h3>
-          <h2 class="title">TITLE</h2>
-          <p class="description">Description</p>
-          <a href="" class="button">Learn More</a>
+          <h3 class="subtitle">NEW RELEASE</h3>
+          <h2 class="title">Fire Emblem</h2>
+          <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci pariatur sit quaerat voluptate, autem, aperiam ea quidem iste nulla, molestias libero eaque rerum officia ipsa illo veritatis aliquam quibusdam vero.</p>
+          <a href="" class="button button-cart">Add To Cart</a>
+          <a href="" class="button button-info">Learn More</a>
         </div>
       </div>
       <div class="item swiper-slide">
         <div class="content">
-          <h3 class="subtitle">Slide 03</h3>
-          <h2 class="title">TITLE</h2>
-          <p class="description">Description</p>
-          <a href="" class="button">Learn More</a>
+          <h3 class="subtitle">NEW RELEASE</h3>
+          <h2 class="title">Pokemon Mystery Dungeon: Red Rescue Team</h2>
+          <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci pariatur sit quaerat voluptate, autem, aperiam ea quidem iste nulla, molestias libero eaque rerum officia ipsa illo veritatis aliquam quibusdam vero.</p>
+          <a href="" class="button button-cart">Add To Cart</a>
+          <a href="" class="button button-info">Learn More</a>
         </div>
       </div>
       <div class="item swiper-slide">
         <div class="content">
-          <h3 class="subtitle">Slide 04</h3>
-          <h2 class="title">TITLE</h2>
-          <p class="description">Description</p>
-          <a href="" class="button">Learn More</a>
+          <h3 class="subtitle">NEW RELEASE</h3>
+          <h2 class="title">The Legend of Zelda: The Minnish Cap</h2>
+          <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci pariatur sit quaerat voluptate, autem, aperiam ea quidem iste nulla, molestias libero eaque rerum officia ipsa illo veritatis aliquam quibusdam vero.</p>
+          <a href="" class="button button-cart">Add To Cart</a>
+          <a href="" class="button button-info">Learn More</a>
         </div>
       </div>
     </div>
@@ -55,10 +59,10 @@
     <div class="controls">
       <ul class="pagination">
         <div class="slider-indicator"></div>
-        <li class="slider-tab">Tab 01</li>
-        <li class="slider-tab">Tab 02</li>
-        <li class="slider-tab">Tab 03</li>
-        <li class="slider-tab">Tab 04</li>
+        <li class="slider-tab">Metal Gear Solid 3: Subsistence</li>
+        <li class="slider-tab">Fire Emblem</li>
+        <li class="slider-tab">Pokemon Mystery Dungeon: Red Rescue Team</li>
+        <li class="slider-tab">The Legend of Zelda: The Minnish Cap</li>
       </ul>
     </div>
 
