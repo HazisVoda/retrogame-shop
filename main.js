@@ -1,3 +1,6 @@
+const sliderTabs = document.querySelectorAll('.slider-tab')
+const sliderIndicator = document.querySelector('.slider-indicator')
+
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
           nav = document.getElementById(navId)
@@ -13,49 +16,34 @@ const showMenu = (toggleId, navId) =>{
  
 showMenu('nav-toggle','nav-menu')
 
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let carousel = document.getElementById('.carousel');
-let items = document.getElementById('.carousel .item');
-let countItem = items.length;
-let active = 1;
-let other_1 = null;
-let other_2 = null;
-next.onclick = () => {
-    carousel.classList.remove('prev');
-    carousel.classList.add('next');
-    active = active + 1 >= countItem ? 0 : active + 1;
-    other_1 = active - 1 < 0 ? countItem - 1 : active - 1;
-    other_2 = active + 1 >= countItem ? 0 : active + 1;
-    changeSlider();
+const updateIndicator = (tab, index) => {
+    sliderIndicator.style.transform = `translateX(${tab.offsetLeft - 20}px)`;
+    sliderIndicator.style.width = `${tab.getBoundingClientRect().width}px`;
 }
-prev.onclick = () => {
-    carousel.classList.remove('next');
-    carousel.classList.add('prev');
-    active = active - 1 < 0 ? countItem - 1 : active - 1;
-    other_1 = active + 1 >= countItem ? 0 : active + 1;
-    other_2 = other_1 + 1 >= countItem ? 0 : other_1 + 1;
-    changeSlider();
+
+const swiper = new Swiper(".slider", {
+    effect: "fade",
+    speed: 1300,
+    // autoplay: { delay: 5000 },
+    navigation: {
+        prevEl: "#slide-prev",
+        nextEl: "#slide-next"
+    },
+    on: {
+        //Pagination update on slide change
+        slideChange: () => {
+            const currentTabIndex = [...sliderTabs].indexOf(sliderTabs[swiper.activeIndex]);
+            updateIndicator(sliderTabs[swiper.activeIndex], currentTabIndex);
+    }
 }
-const changeSlider = () => {
-    let itemOldActive = document.querySelector('.carousel .item.active');
-    if(itemOldActive) itemOldActive.classList.remove('active');
+  });
 
-    let itemOldOther_1 = document.querySelector('.carousel .item.other-1');
-    if(itemOldOther_1) itemOldOther_1.classList.remove('other-1');
-
-    let itemOldOther_2 = document.querySelector('.carousel .item.other-2');
-    if(itemOldOther_2) itemOldOther_2.classList.remove('other-2');
-
-    items.forEach(e => {
-        e.querySelector('.image img').style.animation = 'none';
-        e.querySelector('.image figcaption').style.animation = 'none';
-        void e.offsetWidth;
-        e.querySelector('.image img').style.animation = '';
-        e.querySelector('.image figcaption').style.animation = '';
+sliderTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+        swiper.slideTo(index);
+        updateIndicator(tab, index);
     })
+});
 
-    items(active).classList.add('active');
-    items(other_1).classList.add('other-1');
-    items(other_2).classList.add('other-2');
-}
+updateIndicator(sliderTabs[0], 0);
+window.addEventListener('resize', () => updateIndicator(sliderTabs[swiper.activeIndex], 0));
