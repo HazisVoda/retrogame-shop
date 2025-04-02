@@ -6,7 +6,7 @@
           <img class ="nav__logo" src=".\data\pictures\shop logo png.png"></img> Retroshop
         </a>
 
-      <!-- Search Menu -->
+        <!-- Widgets -->
         <div class="nav__widgets">
           <a class="nav__search" href="#">
             <i class="ri-search-line"></i> Search
@@ -17,9 +17,18 @@
             <i class="ri-close-line nav__close"></i>
           </div>
         </div>
-      
-
+    
       </div>
+
+      <!-- Search Menu -->
+
+      <!--
+      <div class="nav__search-menu" id="nav-search">
+        <input type="text" placeholder="Search..." class="nav__input">
+        <button class="nav__close-search" id="nav-close-search">
+          <i class="ri-close-line"></i>
+        </button>
+      -->
 
       <!-- Nav Menu -->
 
@@ -75,6 +84,9 @@
           </li>
           <li class="dropdown__item">
             <a href="#" class="nav__link">Contact Us</a>
+          </li>
+          <li class="dropdown__item">
+            <a href="/register.php" class="nav__link">Sign Up / Login</a>
           </li>
 
           <!-- Profile Dropdown

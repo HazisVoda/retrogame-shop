@@ -113,7 +113,7 @@ a {
     background-color: var(--orange-color-light);
     border: none;
     border-radius: 25px;
-    padding: 8px;
+    padding: 8px 12px;
     font-size: 1rem;
     font-weight: var(--font-semi-bold);
     font-style: var(--body-font);
@@ -287,6 +287,11 @@ a {
         height: var(--header-height);
         display: flex;
         justify-content: space-between;
+    }
+
+    .nav__search {
+        position: absolute;
+        left: 55%;
     }
 
     .nav__toggle {
