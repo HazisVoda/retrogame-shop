@@ -10,8 +10,8 @@ if(isset($_POST['submit'])){
     $password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
     $cpassword = htmlspecialchars($_POST['cpassword'], ENT_QUOTES, 'UTF-8');
 
-    $select = $conn->prepare("SELECT * FROM `user` WHERE email = ?");
-    $select->execute([$email]);
+    $select = $conn->prepare("SELECT * FROM `user` WHERE email = ? OR username = ?");
+    $select->execute([$email, $username]);
 
     if($select->rowCount() > 0){
         echo "<script>alert('User already exists!')</script>";
@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         }
         else {
             $insert = $conn->prepare("INSERT INTO `user`(firstName, lastName, username, email, password) VALUES(?,?,?,?,?)");
-            $insert->execute([$firstName, $lastName, $username, $email, sha1($password)]);
+            $insert->execute([$firstName, $lastName, $username, $email, $password]);
             echo "<script>alert('Registered successfully!')</script>";
         }
     }
@@ -43,7 +43,11 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Left Section -->
+     <div class="register-container">
+     </div>
 
+    <!-- Register Section -->
     <section class="form-container">
         <form action="" enctype="multipart/form-data" method="POST">
             <h3>Register</h3>

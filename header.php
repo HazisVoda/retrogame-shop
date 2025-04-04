@@ -86,7 +86,7 @@
             <a href="#" class="nav__link">Contact Us</a>
           </li>
           <li class="dropdown__item">
-            <a href="/register.php" class="nav__link">Sign Up / Login</a>
+            <a href="/retrogame-shop/register.php" class="nav__link">Sign Up / Login</a>
           </li>
 
           <!-- Profile Dropdown
