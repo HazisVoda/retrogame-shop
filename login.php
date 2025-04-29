@@ -73,7 +73,7 @@ if(isset($_POST['registerSubmit'])){
     <!-- Swipper JS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS File -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style/login.css">
 </head>
 <body>
 
@@ -112,6 +112,7 @@ if(isset($_POST['registerSubmit'])){
                 </div>
                 <input type="submit" value="Register now" name="registerSubmit" class="registerBtn">
             </form>
+            <button class="mobileSwapBtn" id="signInBtn">Login to your Account</button>
         </div>
         <div class="form-container sign-in-container">
             <form action="#" enctype="multipart/form-data" method="POST">
@@ -132,17 +133,18 @@ if(isset($_POST['registerSubmit'])){
                 <a href="#" class="forgot">Forgot your password?</a>
                 <input type="submit" value="Login" name="loginSubmit" class="loginBtn">
             </form>
+            <button class="mobileSwapBtn" id="signUpBtn">Create an Account</button>
         </div>
         <div class="overlay-container" id="overlayCon">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
+                    <p>To keep connected with us please login with your personal info.</p>
                     <button class ="overlayButton" id="overlaySIBtn">Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
+                    <h1>Welcome!</h1>
+                    <p>Enter your personal details and start your journey with us.</p>
                     <button class ="overlayButton" id="overlaySUBtn">Sign Up</button>
                 </div>
             </div>
@@ -155,6 +157,8 @@ if(isset($_POST['registerSubmit'])){
         const overlayCon = document.getElementById('overlayCon');
         const overlaySIBtn = document.getElementById('overlaySIBtn');
         const overlaySUBtn = document.getElementById('overlaySUBtn');
+        const signInBtnM = document.getElementById('signInBtn');
+        const signUpBtnM = document.getElementById('signUpBtn');
 
         overlaySIBtn.addEventListener('click', () => {
             container.classList.toggle('right-panel-active');
@@ -164,6 +168,13 @@ if(isset($_POST['registerSubmit'])){
             container.classList.toggle('right-panel-active');
         });
 
+        signInBtnM.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+
+        signUpBtnM.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
     </script>
 
 </body>

@@ -23,16 +23,19 @@ if(!isset($admin_id)) {
         <!-- Swipper JS CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- Custom CSS File -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style\style.css">
     </head>
     <body>
         <?php include 'header.php'; ?>
         <div class="container">
-            <h1>Welcome to the Admin Home Page</h1>
-            <p>This is a protected page only accessible to admin users.</p>
-            <a href="logout.php" class="btn">Logout</a>
+            <div class="sidebar">
+
+            </div>
+            <div class="dashboard">
+                
+            </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="main.js"></script>
+        <script src="style\js\main.js"></script>
     </body>
 </html>

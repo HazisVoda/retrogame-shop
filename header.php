@@ -17,7 +17,6 @@
             <i class="ri-close-line nav__close"></i>
           </div>
         </div>
-    
       </div>
 
       <!-- Search Menu -->
@@ -85,11 +84,12 @@
           <li class="dropdown__item">
             <a href="#" class="nav__link">Contact Us</a>
           </li>
-          <li class="dropdown__item">
-            <a href="/retrogame-shop/login.php" class="nav__link">Sign Up / Login</a>
-          </li>
-
-          <!-- Profile Dropdown
+          <?php if(!isset($_SESSION['user_id'])): ?>
+            <li class="dropdown__item">
+              <a href="/retrogame-shop/login.php" class="nav__link">Sign Up / Login</a>
+            </li>
+          <?php else: ?>
+          <!-- Profile Dropdown -->
           <li class="dropdown__item">
             <a href="#" class="nav__link">
               Profile <i class="ri-arrow-down-s-line dropdown__arrow"></i>
@@ -107,16 +107,14 @@
                 </a>
               </li>
               <li>
-                <a href="" class="dropdown__link">
+                <a href="/retrogame-shop/logout.php" class="dropdown__link">
                   <i class="ri-message-3-line"></i> Logout
                 </a>
               </li>
             </ul>
           </li>
-
+          <?php endif; ?>
         </ul>
       </div>
--->
-
     </nav>
-  </header>
+</header>

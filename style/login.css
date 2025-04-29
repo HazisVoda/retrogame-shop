@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-    --header-height: 2.75rem;
+    --header-height: 2.25rem;
 
     --header-color: #fff8f0;
     --header-color-light: #fffafa;
@@ -15,7 +15,7 @@
     --body-color: hsl(220, 100%, 97%);
 
     --body-font: "Montserrat", sans-serif;
-    --normal-font-size: .938rem;
+    --normal-font-size: 14px;
 
     --font-regular: 400;
     --font-semi-bold: 600;
@@ -23,13 +23,6 @@
 
     --z-tooltip: 10;
     --z-fixed: 100;
-
-    --image-width: 500px;
-    --calculate: 5/4;
-
-    --linear-grad: linear-gradient(to right, #141E30, #243B55);
-    --grad-clr1: #141E30;
-    --grad-clr2: #243B55;
 }
 
 @media screen and (min-width: 1024px) {
@@ -55,7 +48,7 @@ body {
 .container {
     position: relative;
     width: 850px;
-    height: 750px;
+    height: 700px;
     display: flex;
     background-color: #fff;
     box-shadow: -10px -10px 25px var(--header-color-light), 10px 10px 35px var(--orange-color-lighten);
@@ -160,6 +153,15 @@ a {
 }
 a:hover {
     color: var(--orange-color-light);
+}
+
+.mobileSwapBtn {
+    position: relative;
+    border: none;
+    background: transparent;
+    color: var(--orange-color-light);
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .registerBtn, .loginBtn, button {
@@ -294,5 +296,32 @@ p {
     50.1%, 100% {
         opacity: 1;
         z-index: var(--z-tooltip);
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        box-shadow: none;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        align-items: top;
+        
+    }
+    .overlay-container {
+        opacity: 0;
+    }
+    .sign-in-container {
+        width: 100%;
     }
 }

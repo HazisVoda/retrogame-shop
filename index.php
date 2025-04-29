@@ -1,3 +1,10 @@
+<?php
+
+include 'config.php';
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +16,12 @@
     <!-- Swipper JS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS File -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
   <?php include 'header.php'; ?>
   <!-- Carousel Slider -->
-   <div class="slider">
+  <div class="slider">
     <!-- Slider List Items -->
     <div class="wrapper swiper-wrapper">
       <div class="item swiper-slide">
@@ -74,11 +81,11 @@
         <i class="ri-arrow-right-s-line"></i>
       </button>
     </div>
-   </div>
+  </div>
 
    <!-- Swipper JS CDN -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <!-- Custom JS File -->
-  <script src="main.js"></script>
+  <script src="style/js/main.js"></script>
 </body>
 </html>
