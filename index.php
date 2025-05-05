@@ -16,7 +16,7 @@ session_start();
     <!-- Swipper JS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS File -->
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <?php include 'header.php'; ?>

@@ -108,7 +108,7 @@
               </li>
               <li>
                 <a href="/retrogame-shop/logout.php" class="dropdown__link">
-                  <i class="ri-message-3-line"></i> Logout
+                  <i class="ri-logout-box-line"></i> Logout
                 </a>
               </li>
             </ul>
