@@ -1,8 +1,8 @@
 <?php
 
-$db_name = "mysql:host=localhost;dbname=retrogame_shop";
+$db_name = "mysql:host=localhost:3330;dbname=retrogame_shop";
 $username = "root";
-$password = "Asigeona1";
+$password = "";
 
 $conn = new PDO($db_name, $username, $password) or die('connection failed');
 

@@ -83,6 +83,40 @@ session_start();
     </div>
   </div>
 
+  <div class="shop">
+    <div class="shop__container">
+      <div class="shop__header">
+        <h2 class="shop__title">Shop</h2>
+        <a href="#" class="shop__link">See All</a>
+      </div>
+
+      <div class="shop__content">
+        <div class="shop__card">
+          <img src="data/pictures/playstation.png" alt="" class="shop__img">
+          <h3 class="shop__name">PlayStation</h3>
+          <p class="shop__price">$49.99</p>
+          <a href="#" class="button button-cart">Add To Cart</a>
+        </div>
+
+        <div class="shop__card">
+          <img src="data/pictures/sega (2).png" alt="" class="shop__img">
+          <h3 class="shop__name">Sega</h3>
+          <p class="shop__price">$39.99</p>
+          <a href="#" class="button button-cart">Add To Cart</a>
+        </div>
+
+        <div class="shop__card">
+          <img src="data/pictures/nintendo.png" alt="" class="shop__img">
+          <h3 class="shop__name">Nintendo</h3>
+          <p class="shop__price">$29.99</p>
+          <a href="#" class="button button-cart">Add To Cart</a>
+        </div>
+
+        <!-- Add more shop cards as needed -->
+      </div>
+    </div>
+  </div>
+
    <!-- Swipper JS CDN -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <!-- Custom JS File -->

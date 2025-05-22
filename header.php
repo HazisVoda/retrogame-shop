@@ -37,7 +37,7 @@
             <a href="#" class="nav__link">Explore</a>
           </li>
           <li class="dropdown__item">
-            <a href="#" class="nav__link">Shop <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            <a href="view/shop.php" class="nav__link">Shop <i class="ri-arrow-down-s-line dropdown__arrow"></i>
             </a>
 
             <ul class="dropdown__menu">
