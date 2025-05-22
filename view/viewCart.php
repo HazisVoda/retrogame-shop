@@ -1,7 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
-require_once __DIR__ . '/../../config.php';
-require_once __DIR__ . '/../../controller/CartController.php';
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../controller/CartController.php';
 
 $ctrl = new CartController($conn);
 
@@ -26,13 +26,13 @@ extract($ctrl->index());
 <head>
   <meta charset="UTF-8">
   <title>Your Cart</title>
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <h1>Your Cart</h1>
 
   <?php if (empty($games)): ?>
-    <p>Your cart is empty. <a href="games.php">Browse games</a>.</p>
+    <p>Your cart is empty. <a href="shop.php">Browse games</a>.</p>
   <?php else: ?>
     <table>
       <thead>
@@ -52,7 +52,7 @@ extract($ctrl->index());
             <td><?= $g['quantity'] ?></td>
             <td>$<?= number_format($g['subtotal'], 2) ?></td>
             <td>
-              <a href="cart.php?action=remove&id=<?= $g['id'] ?>">Remove</a>
+              <a href="viewCart.php?action=remove&id=<?= $g['id'] ?>">Remove</a>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -60,8 +60,8 @@ extract($ctrl->index());
     </table>
     <p>Total: €<?= number_format($total, 2) ?></p>
     <p>
-      <a href="cart.php?action=checkout">Checkout</a> |
-      <a href="cart.php?action=clear">Clear Cart</a>
+      <a href="viewCart.php?action=checkout">Checkout</a> |
+      <a href="viewCart.php?action=clear">Clear Cart</a>
     </p>
   <?php endif; ?>
 </body>

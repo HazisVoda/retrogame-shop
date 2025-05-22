@@ -14,7 +14,7 @@ class CartController {
         $this->gameModel = new Game($db);
         if (session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['user_id'])) {
-            header('Location: ../view/login.php');
+            header('Location: ../login.php');
             exit();
         }
     }
@@ -40,19 +40,19 @@ class CartController {
 
     public function add(int $gameId): void {
         $this->cart->addItem($gameId);
-        header('Location: ../view/cart.php');
+        header('Location: ../view/viewCart.php');
         exit();
     }
 
     public function remove(int $gameId): void {
         $this->cart->removeItem($gameId);
-        header('Location: ../view/cart.php');
+        header('Location: ../view/viewCart.php');
         exit();
     }
 
     public function clear(): void {
         $this->cart->clear();
-        header('Location: ../view/cart.php');
+        header('Location: ../view/viewCart.php');
         exit();
     }
 
@@ -78,11 +78,11 @@ class CartController {
 
         if ($order->create($orderItems, $totalPrice, 'Completed')) {
             $this->cart->clear();
-            header('Location: ../view/checkout_success.php');
+            header('Location: ../view/checkoutSuccess.php');
             exit();
         }
 
-        header('Location: ../view/cart.php?error=checkout_failed');
+        header('Location: ../view/viewCart.php?error=checkout_failed');
         exit();
     }
 }

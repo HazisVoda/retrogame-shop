@@ -28,12 +28,12 @@ extract($ctrl->index());
   <h1>Your Wishlist</h1>
 
   <?php if (empty($games)): ?>
-    <p>Your wishlist is empty. <a href="games.php">Browse games</a>.</p>
+    <p>Your wishlist is empty. <a href="shop.php">Browse games</a>.</p>
   <?php else: ?>
     <div class="game-grid">
       <?php foreach ($games as $g): ?>
         <div class="game-card">
-          <a href="game_details.php?id=<?= $g['id'] ?>">
+          <a href="gameDetails.php?id=<?= $g['id'] ?>">
             <img src="<?= htmlspecialchars($g['image']) ?>" alt="<?= htmlspecialchars($g['name']) ?>">
             <h2><?= htmlspecialchars($g['name']) ?></h2>
             <p>€<?= number_format($g['price'], 2) ?></p>
@@ -41,7 +41,7 @@ extract($ctrl->index());
           <button onclick="location.href='wishlist.php?action=remove&id=<?= $g['id'] ?>'">
             Remove
           </button>
-          <button onclick="location.href='cart.php?action=add&id=<?= $g['id'] ?>'">
+          <button onclick="location.href='viewCart.php?action=add&id=<?= $g['id'] ?>'">
             Add to Cart
           </button>
         </div>

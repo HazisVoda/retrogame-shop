@@ -16,8 +16,8 @@ extract($ctrl->index());
         <header>
             <h1>Game Shop</h1>
             <nav>
-                <a href="index.php">Home</a>
-                <a href="cart.php">Cart</a>
+                <a href="../index.php">Home</a>
+                <a href="viewCart.php">Cart</a>
                 <a href="wishlist.php">Wishlist</a>
                 <a href="profile.php">Profile</a>
             </nav>
@@ -33,7 +33,7 @@ extract($ctrl->index());
                     <h2><?= htmlspecialchars($g['name']) ?></h2>
                     <p>€<?= number_format($g['price'], 2) ?></p>
                   </a>
-                  <button onclick="location.href='cart.php?action=add&id=<?= $g['id'] ?>'">
+                  <button onclick="location.href='viewCart.php?action=add&id=<?= $g['id'] ?>'">
                     Add to Cart
                   </button>
                   <button onclick="location.href='wishlist.php?action=add&id=<?= $g['id'] ?>'">
