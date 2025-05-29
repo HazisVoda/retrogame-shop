@@ -19,7 +19,7 @@ class HomeController
             SELECT *
             FROM games
             WHERE stock > 0
-            ORDER BY dateReleased DESC
+            ORDER BY addedAt DESC
             LIMIT 4
         ";
         $stmt       = $this->db->prepare($sqlRecent);

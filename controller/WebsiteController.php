@@ -79,11 +79,11 @@ class WebsiteController
             }
         }
 
-        $sql = "UPDATE website SET name = :name, description = :description, footer = :footer" .
+        $sql = "UPDATE website SET name = :name, details = :details, footer = :footer" .
             ($logoPath ? ", logo = :logo" : "");
         $params = [
             ':name' => $name,
-            ':description' => $description,
+            ':details' => $description,
             ':footer' => $footer
         ];
         if ($logoPath) $params[':logo'] = $logoPath;

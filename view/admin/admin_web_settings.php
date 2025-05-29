@@ -100,7 +100,7 @@ extract($ctrl->index());
         <div class="form__group">
             <label for="logo">Website Logo</label>
             <?php if (!empty($webInfo['logo'])): ?>
-                <img src="../<?= htmlspecialchars($webInfo['logo']) ?>" alt="Current Logo" height="50">
+                <img src="../../<?= htmlspecialchars($webInfo['logo']) ?>" alt="Current Logo" height="50">
             <?php endif; ?>
             <input type="file" id="logo" name="logo" accept="image/*">
         </div>
