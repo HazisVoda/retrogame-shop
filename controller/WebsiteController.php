@@ -61,4 +61,34 @@ class WebsiteController
         header('Location: ../view/admin/website.php?updated=1');
         exit();
     }
+    public function update(): void {
+        $name = $_POST['name'] ?? '';
+        $description = $_POST['description'] ?? '';
+        $footer = $_POST['footer'] ?? '';
+
+        $logoPath = null;
+        if (!empty($_FILES['logo']['tmp_name'])) {
+            $uploadDir = __DIR__ . '/../data/uploaded-img/';
+            if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
+
+            $ext = pathinfo($_FILES['logo']['name'], PATHINFO_EXTENSION);
+            $safeName = 'logo_' . time() . '.' . $ext;
+            $targetPath = $uploadDir . $safeName;
+            if (move_uploaded_file($_FILES['logo']['tmp_name'], $targetPath)) {
+                $logoPath = 'data/uploaded-img/' . $safeName;
+            }
+        }
+
+        $sql = "UPDATE website SET name = :name, description = :description, footer = :footer" .
+            ($logoPath ? ", logo = :logo" : "");
+        $params = [
+            ':name' => $name,
+            ':description' => $description,
+            ':footer' => $footer
+        ];
+        if ($logoPath) $params[':logo'] = $logoPath;
+
+        $this->db->prepare($sql)->execute($params);
+    }
+
 }

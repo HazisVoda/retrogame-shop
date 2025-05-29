@@ -60,17 +60,17 @@ extract($ctrl->index());
             <ul class="dropdown__menu">
               <li>
                 <a href="shop.php?platform=PlayStation" class="dropdown__link">
-                  <img src ="data/pictures/playstation.png">PlayStation
+                  <img src ="../data/pictures/playstation.png">PlayStation
                 </a>
               </li>
               <li>
                 <a href="shop.php?platform=Sega" class="dropdown__link">
-                  <img src="data/pictures/sega (2).png">Sega
+                  <img src="../data/pictures/sega (2).png">Sega
                 </a>
               </li>
               <li>
                 <a href="shop.php?platform=Nintendo" class="dropdown__link">
-                  <img src="data/pictures/nintendo.png">Nintendo
+                  <img src="../data/pictures/nintendo.png">Nintendo
                 </a>
               </li>
             </ul>
@@ -95,6 +95,11 @@ extract($ctrl->index());
               <li>
                 <a href="wishlist.php" class="dropdown__link">
                   <i class="ri-heart-fill"></i> Wishlist
+                </a>
+              </li>
+              <li>
+                <a href="viewCart.php" class="dropdown__link">
+                  <i class="ri-shopping-cart-line"></i> Cart
                 </a>
               </li>
               <li>
@@ -277,9 +282,9 @@ extract($ctrl->index());
         <div class="footer__section">
           <h4 class="footer__subtitle">Quick Links</h4>
           <ul class="footer__links">
-            <li><a href="index.php" class="footer__link">Home</a></li>
-            <li><a href="view/shop.php" class="footer__link">All Games</a></li>
-            <li><a href="#" class="footer__link">Contact Us: <?= htmlspecialchars($webInfo['email'])?></a></li>
+            <li><a href="../index.php" class="footer__link">Home</a></li>
+            <li><a href="shop.php" class="footer__link">All Games</a></li>
+            <li><a href="" class="footer__link">Contact Us: <?= htmlspecialchars($webInfo['email'])?></a></li>
           </ul>
         </div>
 
@@ -289,11 +294,11 @@ extract($ctrl->index());
             <?php if (isset($_SESSION['user_id'])): ?>
               <li><a href="profile.php" class="footer__link">My Profile</a></li>
               <li><a href="wishlist.php" class="footer__link">My Wishlist</a></li>
-              <li><a href="cart.php" class="footer__link">My Cart</a></li>
-              <li><a href="logout.php" class="footer__link">Logout</a></li>
+              <li><a href="viewCart.php" class="footer__link">My Cart</a></li>
+              <li><a href="../logout.php" class="footer__link">Logout</a></li>
             <?php else: ?>
-              <li><a href="login.php" class="footer__link">Login</a></li>
-              <li><a href="register.php" class="footer__link">Register</a></li>
+              <li><a href="../login.php" class="footer__link">Login</a></li>
+              <li><a href="../login.php" class="footer__link">Register</a></li>
             <?php endif; ?>
           </ul>
         </div>

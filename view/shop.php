@@ -51,17 +51,17 @@ extract($ctrl->index());
             <ul class="dropdown__menu">
               <li>
                 <a href="shop.php?platform=PlayStation" class="dropdown__link">
-                  <img src ="data/pictures/playstation.png">PlayStation
+                  <img src ="../data/pictures/playstation.png">PlayStation
                 </a>
               </li>
               <li>
                 <a href="shop.php?platform=Sega" class="dropdown__link">
-                  <img src="data/pictures/sega (2).png">Sega
+                  <img src="../data/pictures/sega (2).png">Sega
                 </a>
               </li>
               <li>
                 <a href="shop.php?platform=Nintendo" class="dropdown__link">
-                  <img src="data/pictures/nintendo.png">Nintendo
+                  <img src="../data/pictures/nintendo.png">Nintendo
                 </a>
               </li>
             </ul>
@@ -86,6 +86,11 @@ extract($ctrl->index());
               <li>
                 <a href="wishlist.php" class="dropdown__link">
                   <i class="ri-heart-fill"></i> Wishlist
+                </a>
+              </li>
+              <li>
+                <a href="viewCart.php" class="dropdown__link">
+                  <i class="ri-shopping-cart-line"></i> Cart
                 </a>
               </li>
               <li>
@@ -326,19 +331,19 @@ extract($ctrl->index());
     <div class="footer__container">
       <div class="footer__content">
         <div class="footer__section">
-          <h3 class="footer__title">GameStore</h3>
-          <p class="footer__description">Your ultimate destination for retro and modern gaming experiences.</p>
+          <h3 class="footer__title"><?= htmlspecialchars($webInfo['name'])?></h3>
+          <p class="footer__description"><?= htmlspecialchars($webInfo['footer'])?></p>
           <div class="footer__social">
-            <a href="#" class="footer__social-link">
+            <a href="<?= htmlspecialchars($webInfo['facebook'])?>" class="footer__social-link">
               <i class="ri-facebook-fill"></i>
             </a>
-            <a href="#" class="footer__social-link">
+            <a href="<?= htmlspecialchars($webInfo['twitter'])?>" class="footer__social-link">
               <i class="ri-twitter-fill"></i>
             </a>
-            <a href="#" class="footer__social-link">
+            <a href="<?= htmlspecialchars($webInfo['instagram'])?>" class="footer__social-link">
               <i class="ri-instagram-fill"></i>
             </a>
-            <a href="#" class="footer__social-link">
+            <a href="<?= htmlspecialchars($webInfo['youtube'])?>" class="footer__social-link">
               <i class="ri-youtube-fill"></i>
             </a>
           </div>
@@ -347,22 +352,9 @@ extract($ctrl->index());
         <div class="footer__section">
           <h4 class="footer__subtitle">Quick Links</h4>
           <ul class="footer__links">
-            <li><a href="index.php" class="footer__link">Home</a></li>
-            <li><a href="products.php" class="footer__link">All Games</a></li>
-            <li><a href="categories.php" class="footer__link">Categories</a></li>
-            <li><a href="about.php" class="footer__link">About Us</a></li>
-            <li><a href="contact.php" class="footer__link">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__section">
-          <h4 class="footer__subtitle">Customer Service</h4>
-          <ul class="footer__links">
-            <li><a href="support.php" class="footer__link">Help Center</a></li>
-            <li><a href="shipping.php" class="footer__link">Shipping Info</a></li>
-            <li><a href="returns.php" class="footer__link">Returns</a></li>
-            <li><a href="faq.php" class="footer__link">FAQ</a></li>
-            <li><a href="track-order.php" class="footer__link">Track Order</a></li>
+            <li><a href="../index.php" class="footer__link">Home</a></li>
+            <li><a href="shop.php" class="footer__link">All Games</a></li>
+            <li><a href="" class="footer__link">Contact Us: <?= htmlspecialchars($webInfo['email'])?></a></li>
           </ul>
         </div>
 
@@ -371,14 +363,13 @@ extract($ctrl->index());
           <ul class="footer__links">
             <?php if (isset($_SESSION['user_id'])): ?>
               <li><a href="profile.php" class="footer__link">My Profile</a></li>
-              <li><a href="orders.php" class="footer__link">My Orders</a></li>
-              <li><a href="wishlist.php" class="footer__link">Wishlist</a></li>
-              <li><a href="logout.php" class="footer__link">Logout</a></li>
+              <li><a href="wishlist.php" class="footer__link">My Wishlist</a></li>
+              <li><a href="viewCart.php" class="footer__link">My Cart</a></li>
+              <li><a href="../logout.php" class="footer__link">Logout</a></li>
             <?php else: ?>
-              <li><a href="login.php" class="footer__link">Login</a></li>
-              <li><a href="register.php" class="footer__link">Register</a></li>
+              <li><a href="../login.php" class="footer__link">Login</a></li>
+              <li><a href="../login.php" class="footer__link">Register</a></li>
             <?php endif; ?>
-            <li><a href="cart.php" class="footer__link">Shopping Cart</a></li>
           </ul>
         </div>
       </div>
@@ -386,13 +377,8 @@ extract($ctrl->index());
       <div class="footer__bottom">
         <div class="footer__bottom-content">
           <p class="footer__copyright">
-            &copy; <?= date('Y') ?> GameStore. All rights reserved.
+            &copy; <?= date('Y') ?> <?= htmlspecialchars($webInfo['name'])?>. All rights reserved.
           </p>
-          <div class="footer__bottom-links">
-            <a href="privacy.php" class="footer__bottom-link">Privacy Policy</a>
-            <a href="terms.php" class="footer__bottom-link">Terms of Service</a>
-            <a href="cookies.php" class="footer__bottom-link">Cookie Policy</a>
-          </div>
         </div>
       </div>
     </div>

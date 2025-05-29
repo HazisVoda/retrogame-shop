@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/check_auth.php';
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/controller/HomeController.php';
 require_once __DIR__ . '/controller/WebsiteController.php';
@@ -9,7 +9,6 @@ $webCtrl = new WebsiteController($conn);
 extract($webCtrl->index());
 extract($ctrl->index());
 
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +91,11 @@ session_start();
                 </a>
               </li>
               <li>
+                <a href="view/viewCart.php" class="dropdown__link">
+                  <i class="ri-shopping-cart-line"></i> Cart
+                </a>
+              </li>
+              <li>
                 <a href="/retrogame-shop/logout.php" class="dropdown__link">
                   <i class="ri-logout-box-line"></i> Logout
                 </a>
@@ -150,7 +154,7 @@ session_start();
     <div class="shop__container">
       <div class="shop__header">
         <h2 class="shop__title">Best-Selling Games</h2>
-        <a href="products.php" class="shop__link">See All</a>
+        <a href="view/shop.php" class="shop__link">See All</a>
       </div>
 
       <div class="shop__content">
@@ -214,13 +218,13 @@ session_start();
           <h4 class="footer__subtitle">Account</h4>
           <ul class="footer__links">
             <?php if (isset($_SESSION['user_id'])): ?>
-              <li><a href="profile.php" class="footer__link">My Profile</a></li>
-              <li><a href="wishlist.php" class="footer__link">My Wishlist</a></li>
-              <li><a href="cart.php" class="footer__link">My Cart</a></li>
+              <li><a href="view/profile.php" class="footer__link">My Profile</a></li>
+              <li><a href="view/wishlist.php" class="footer__link">My Wishlist</a></li>
+              <li><a href="view/viewCart.php" class="footer__link">My Cart</a></li>
               <li><a href="logout.php" class="footer__link">Logout</a></li>
             <?php else: ?>
               <li><a href="login.php" class="footer__link">Login</a></li>
-              <li><a href="register.php" class="footer__link">Register</a></li>
+              <li><a href="login.php" class="footer__link">Register</a></li>
             <?php endif; ?>
           </ul>
         </div>

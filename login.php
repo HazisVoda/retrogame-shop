@@ -12,7 +12,7 @@ if(isset($_POST['registerSubmit'])){
     $password = htmlspecialchars($_POST['registerPassword'], ENT_QUOTES, 'UTF-8');
     $cpassword = htmlspecialchars($_POST['cpassword'], ENT_QUOTES, 'UTF-8');
 
-    $select = $conn->prepare("SELECT * FROM `user` WHERE email = ? OR username = ?");
+    $select = $conn->prepare("SELECT * FROM `users` WHERE email = ? OR username = ?");
     $select->execute([$email, $username]);
 
     if($select->rowCount() > 0){
@@ -24,9 +24,8 @@ if(isset($_POST['registerSubmit'])){
         else {
             $password = password_hash($password, PASSWORD_DEFAULT);
 
-            $insert = $conn->prepare("INSERT INTO `user`(firstName, lastName, username, email, password) VALUES(?,?,?,?,?)");
-            $insert->execute([$firstName, $lastName, $username, $email, $password]);
-            echo "<script>alert('Registered successfully!')</script>";
+            $insert = $conn->prepare("INSERT INTO `users`(firstName, lastName, username, email, password, role_id) VALUES(?,?,?,?,?,?)");
+            $insert->execute([$firstName, $lastName, $username, $email, $password, 1]);
         }
     }
 }

@@ -12,7 +12,7 @@ class CartController {
     public function __construct(PDO $db) {
         session_start();
         if (!isset($_SESSION['user_id'])) {
-            header('Location: ../view/login.php');
+            header('Location: ../login.php');
             exit();
         }
         $this->db        = $db;

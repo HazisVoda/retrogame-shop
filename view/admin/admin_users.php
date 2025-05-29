@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] !== 2) {
 }
 
 require_once '../../controller/AdminUsersController.php';
+require_once '../../controller/WebsiteController.php';
 
 $controller = new AdminUsersController($conn);
 $data = $controller->listUsers();
@@ -19,12 +20,58 @@ extract($data);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Admin Users</title>
+    <title>Users Management</title>
     <meta charset="UTF-8" />
     <style href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"></style>
-    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/admin_users.css">
 </head>
 <body>
+
+<div class="sidebar">
+        <div class ="top-bar">
+            <div class="profile-link">
+                <a href="../profile.php" class="profile-img">
+                    <img src="../../<?= $_SESSION['image']?>" alt="Profile Picture">
+                </a>
+                <div class="profile-details">
+                    <h4><?php echo htmlspecialchars($_SESSION['username']); ?></h4>
+                </div>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="admin_home.php" class="sidebar-link">
+                    <i class="ri-dashboard-fill"></i> <h4>Dashboard</h4>
+                </a>
+            </li>
+            <li>
+                <a href="admin_users.php" class="sidebar-link active">
+                    <i class="ri-group-fill"></i> <h4>Users</h4>
+                </a>
+            </li>
+            <li>
+                <a href="admin_games.php" class="sidebar-link">
+                    <i class="ri-store-2-line"></i> <h4>Games</h4>
+                </a>
+            </li>
+            <li>
+                <a href="admin_analytics.php" class="sidebar-link">
+                    <i class="ri-bar-chart-box-line"></i> <h4>Analytics</h4>
+                </a>
+            </li>
+            <li>
+                <a href="admin_web_settings.php" class="sidebar-link">
+                    <i class="ri-pages-line"></i> <h4>Website</h4>
+                </a>
+            </li>
+            <li>
+                <a href="../../logout.php" class="sidebar-link">
+                    <i class="ri-logout-box-line"></i> <h4>Logout</h4>
+                </a>
+            </li>
+        </ul>
+    </div>
 
 <h2>Users Management</h2>
 
