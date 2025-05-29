@@ -163,6 +163,31 @@ class Order {
         }
         return $result;
     }
+    public function getOrdersByUser(int $userId): array
+    {
+        // 1) Pull the base order rows
+        $stmt = $this->db->prepare("
+            SELECT id, placed_on, payment_status AS status, total_price AS total
+            FROM orders
+            WHERE user_id = :uid
+            ORDER BY placed_on DESC
+        ");
+        $stmt->execute([':uid' => $userId]);
+        $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // 2) For each order, pull its items
+        $itemStmt = $this->db->prepare("
+            SELECT oi.quantity, oi.price, g.name, g.image
+            FROM order_items oi
+            JOIN games g ON g.id = oi.game_id
+            WHERE oi.order_id = :oid
+        ");
+        foreach ($orders as &$ord) {
+            $itemStmt->execute([':oid' => $ord['id']]);
+            $ord['items'] = $itemStmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $orders;
+    }
 }
 
 class OrderItem {

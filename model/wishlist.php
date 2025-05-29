@@ -61,4 +61,13 @@ class Wishlist {
         ]);
         return (bool)$stmt->fetchColumn();
     }
+    public function countItems(int $userId): int
+    {
+        $stmt = $this->db->prepare("
+            SELECT COUNT(*) FROM wishlist
+            WHERE user_id = :uid
+        ");
+        $stmt->execute([':uid' => $userId]);
+        return (int)$stmt->fetchColumn();
+    }
 }

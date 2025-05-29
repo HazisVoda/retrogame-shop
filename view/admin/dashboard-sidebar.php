@@ -2,7 +2,7 @@
         <div class ="top-bar">
             <div class="profile-link">
                 <a href="../profile.php" class="profile-img">
-                    <img src="../../data/uploaded-img/<?= $adminImage?>" alt="Profile Picture">
+                    <img src="../../<?= $adminImage?>" alt="Profile Picture">
                 </a>
                 <div class="profile-details">
                     <h4><?php echo htmlspecialchars($adminUsername); ?></h4>

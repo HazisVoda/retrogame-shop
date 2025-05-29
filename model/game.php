@@ -224,6 +224,19 @@ class Game {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function updateStock(int $id, int $newStock): bool
+    {
+        $stmt = $this->db->prepare("
+            UPDATE games 
+            SET stock = :stock 
+            WHERE id = :id
+        ");
+        return $stmt->execute([
+            ':stock' => $newStock,
+            ':id'    => $id,
+        ]);
+    }
+
 }
 
 ?>
